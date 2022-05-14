@@ -38,31 +38,28 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 |         Name         |  Function  | IP Address | Operating System |
 |:--------------------:|:----------:|:----------:|:----------------:|
 | Jump-Box-Provisioner |   Gateway  |  10.0.0.4  |       Linux      |
-|        ELK-Box       | ELK Server |  10.1.0.4  |       Linux      |
 |         Web-1        |  Webserver |  10.0.0.5  |       Linux      |
 |         Web-2        |  Webserver |  10.0.0.6  |       Linux      |
-|         Web-3        |  Webserver |  10.0.0.7  |       Linux      |
+|       Elk Server     |   Monitor  |  10.2.0.4  |       Linux      |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _73.202.25.239_
-- _67.181.84.126_
+- _40.117.170.162_
+
 
 Machines within the network can only be accessed by eachother.
-- _To access the ELK-Box, you must connect through SSH from the ansible container on the Jumpbox._
+- _To access the ELK Server, you must connect through SSH from the ansible container on the Jumpbox._
 
 A summary of the access policies in place can be found in the table below.
 
 |         Name         | Publicly Accessible |     Allowed IP Addresses    |
 |:--------------------:|:-------------------:|:---------------------------:|
-| Jump-Box-Provisioner |         Yes         | 73.202.25.239,67.181.84.126 |
-|        ELK-Box       |          No         |         10.0.0.0/16         |
-|         Web-1        |          No         |         10.0.0.0/16         |
-|         Web-2        |          No         |         10.0.0.0/16         |
-|         Web-3        |          No         |         10.0.0.0/16         |
+| Jump-Box-Provisioner |          No         |        40.117.170.162       |
+|         Web-1        |          No         |         10.0.0.4/16         |
+|         Web-2        |          No         |         10.0.0.4/16         |
 
 ### Elk Configuration
 
@@ -72,7 +69,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 The playbook implements the following tasks:
 - _Install Dockerio, python3-pip, and Docker_
 - _Increase virtual memory for the elk container_
-- _Download and launch an ELK 7.9.1 container using Docker with published ports 5044, 5601, and 9200_
+- _Download and launch an ELK container using Docker with published ports 5044, 5601, and 9200_
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -82,7 +79,6 @@ The following screenshot displays the result of running `docker ps` after succes
 This ELK server is configured to monitor the following machines:
 - _10.0.0.5_
 - _10.0.0.6_
-- _10.0.0.7_
 
 We have installed the following Beats on these machines:
 - _Filebeat_
@@ -97,7 +93,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the playbook file to Ansible container on Jump-Box.
-- Update the hosts file to include the ELK-Box ip and python interpreter location.
+- Update the hosts file to include the ELK-Server ip and python interpreter location.
 - Run the playbook, and navigate to the public ip of the ELK-Box on port 5601 (i.e. http://40.83.161.39:5601) to check that the installation worked as expected.
 
 - _install-elk.yml should be moved to your ansible container and executed with the command: ansible-playbook.yml_
