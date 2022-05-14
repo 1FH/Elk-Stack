@@ -24,10 +24,10 @@ This document contains the following details:
 
 ### Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly reliable, in addition to restricting network access to the network.
-- _Load balancers protect website deployemnts by making a Denial of Service attack require much more thorughput. By seperating traffic between many servers, they can provide a more reliable system with higher uptime. They do not need all of the servers to be online in order to function correctly._
+- _Load balancers protect website deployments by making a Denial of Service attack require much more throughput. By seperating traffic between many servers, they can provide a more reliable system with higher uptime. They do not need all of the servers to be online in order to function correctly._
 - _A jumpbox provides an organization security and ease of access to their network. By providing a single place to connect to that has access to the rest of the network, the network can maintain a higher security stance than would normally be allowed if you had to connect to individual machines inside of it._
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file systems and system metrics.
@@ -50,7 +50,7 @@ Only the Jumpbox machine can accept connections from the Internet. Access to thi
 - _40.117.170.162_
 
 
-Machines within the network can only be accessed by eachother.
+Machines within the network can only be accessed by each other.
 - _To access the ELK Server, you must connect through SSH from the ansible container on the Jumpbox._
 
 A summary of the access policies in place can be found in the table below.
@@ -88,15 +88,15 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - _Filebeat collects logdata from the webservers. It is configured to collect Apache logs._
-- _Metricbeat collects system metrics such as CPU/RAM usage as well as detech SSH logins anf failed 'sudo' escalations._
+- _Metricbeat collects system metrics such as CPU/RAM usage as well as detect SSH logins and failed 'sudo' escalations._
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 - Copy the playbook file to Ansible container on Jump-Box.
-- Update the hosts file to include the ELK-Server ip and python interpreter location.
-- Run the playbook, and navigate to the public ip of the ELK-Box on port 5601 (i.e. http://40.83.161.39:5601) to check that the installation worked as expected.
+- Update the hosts file to include the ELK-Server IP and python interpreter location.
+- Run the playbook, and navigate to the public IP of the ELK-Box on port 5601 (i.e. http://40.83.161.39:5601) to check that the installation worked as expected.
 
 - _install-elk.yml should be moved to your ansible container and executed with the command: ansible-playbook.yml_
 - _In the install-elk.yml file, the (hosts:) should be elk rather than webserver to ensure that the ELK container is installed on the machine you want ELK installed on._
