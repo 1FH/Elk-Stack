@@ -101,7 +101,7 @@ SSH into the control node and follow the steps below:
 - _install-elk.yml should be moved to your ansible container and executed with the command: ansible-playbook.yml_
 - _In the install-elk.yml file, the (hosts:) should be elk rather than webserver to ensure that the ELK container is installed on the machine you want ELK installed on._
 
-The table below shows all the commnands used and their corresponding functions.
+The table below shows all the commands that were used and their corresponding functions.
 |         Name                                                                                            | Publicly Accessible |
 |:-------------------------------------------------------------------------------------------------------:|:-------------------:|
 |         Commands Used                                                                                   |       Function      | 
