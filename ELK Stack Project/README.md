@@ -102,9 +102,8 @@ SSH into the control node and follow the steps below:
 - _In the install-elk.yml file, the (hosts:) should be elk rather than webserver to ensure that the ELK container is installed on the machine you want ELK installed on._
 
 The table below shows all the commands that were used and their corresponding functions.
-|         Name                                                                                            | Publicly Accessible |
+|         Commands Used                                                                                   |       Function      |
 |:-------------------------------------------------------------------------------------------------------:|:-------------------:|
-|         Commands Used                                                                                   |       Function      | 
 |         ssh-keygen                                                                                      |  Creates an ssh key | 
 |         ssh RedAdmin@`workstation public IP`                                                            |   SSH into jumpbox  |
 |         sudo apt install docker.io                                                                      |    Install docker   |
