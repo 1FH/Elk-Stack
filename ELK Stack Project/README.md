@@ -71,9 +71,11 @@ The playbook implements the following tasks:
 - _Increase virtual memory for the elk container_
 - _Download and launch an ELK container using Docker with published ports 5044, 5601, and 9200_
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+The following screenshots displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![dockerps.jpg](Images/dockerps.jpg)
+![kibana1.jpg](Images/kibana1.jpg)
+![kibana2.jpg](Images/kibana2.jpg)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
