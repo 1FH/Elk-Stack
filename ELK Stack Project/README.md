@@ -73,7 +73,7 @@ The playbook implements the following tasks:
 
 The following screenshots displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-
+![dockerps.jpg](Images/dockerps.jpg)
 ![kibana1.jpg](Images/kibana1.jpg)
 ![kibana2.jpg](Images/kibana2.jpg)
 
