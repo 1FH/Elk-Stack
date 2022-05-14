@@ -100,3 +100,19 @@ SSH into the control node and follow the steps below:
 
 - _install-elk.yml should be moved to your ansible container and executed with the command: ansible-playbook.yml_
 - _In the install-elk.yml file, the (hosts:) should be elk rather than webserver to ensure that the ELK container is installed on the machine you want ELK installed on._
+
+Commands Used
+|         Name                                                                                            | Publicly Accessible |
+|:-------------------------------------------------------------------------------------------------------:|:-------------------:|
+|         Commands Used                                                                                   |       Function      | 
+|         ssh-keygen                                                                                      |  Creates an ssh key | 
+|         ssh RedAdmin@`workstation public IP`                                                            |   SSH into jumpbox  |
+|         sudo apt install docker.io                                                                      |    Install docker   |
+|         systemctl status docker                                                                         | Checks docker status|
+|         sudo docker start `machine image name`                                                          | Starts docker image |
+|         sudo docker attach `machine image name`                                                         | Attach docker image |
+|         sudo docker ps -a                                                                               | Shows containers    |
+|         docker container list -a                                                                        | Verify docker is on |
+|         ansible -m ping all                                                                             | Pings created VM(s) |
+|         curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb       |    Transfers data   |
+|         dpkg -i filebeat-7.4.0-amd64.deb                                                                | Installs .deb file  |
